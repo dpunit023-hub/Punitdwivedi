@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrowthLab Academy | Digital Marketing Course</title>
+    <meta
+      name="description"
+      content="Learn SEO, social media marketing, email marketing, paid ads, analytics, and content strategy with GrowthLab Academy."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #081120;
+        --bg-soft: #101c2f;
+        --panel: #12233d;
+        --panel-2: #183152;
+        --card: #f7f9fc;
+        --primary: #5b7cff;
+        --primary-2: #7b9cff;
+        --accent: #ffb703;
+        --text: #eaf1ff;
+        --text-soft: #afc0df;
+        --muted: #5e7189;
+        --success: #2dd4bf;
+        --shadow: 0 18px 45px rgba(6, 16, 31, 0.28);
+        --radius: 22px;
+        --max-width: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(180deg, #081120 0%, #0d1830 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: min(var(--max-width), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 24px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: 0.25s ease;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(91, 124, 255, 0.35);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 38px rgba(91, 124, 255, 0.47);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(91, 124, 255, 0.12);
+        border: 1px solid rgba(91, 124, 255, 0.25);
+        color: #dfe8ff;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.02em;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(8, 17, 32, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+        color: #fff;
+        box-shadow: 0 12px 26px rgba(91, 124, 255, 0.4);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--text-soft);
+        font-size: 0.96rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+      .hero {
+        padding: 72px 0 54px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 46px;
+      }
+
+      .eyebrow {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--primary-2);
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 5vw, 5rem);
+        line-height: 1.02;
+        letter-spacing: -0.065em;
+        margin-bottom: 20px;
+      }
+
+      .hero-copy p {
+        color: var(--text-soft);
+        font-size: 1.08rem;
+        max-width: 620px;
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      .hero-stats {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 28px;
+        color: var(--text-soft);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.7rem;
+        color: var(--text);
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .visual-card {
+        background: linear-gradient(180deg, rgba(19, 32, 52, 0.9), rgba(11, 17, 29, 0.94));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-main-image {
+        border-radius: 28px 28px 0 0;
+        overflow: hidden;
+      }
+
+      .hero-main-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      .floating-card {
+        position: absolute;
+        background: rgba(11, 19, 31, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 18px;
+        padding: 14px 18px;
+        box-shadow: 0 18px 30px rgba(3, 7, 15, 0.33);
+      }
+
+      .floating-card.small {
+        right: -18px;
+        bottom: 42px;
+      }
+
+      .floating-card.large {
+        left: -26px;
+        bottom: 18px;
+      }
+
+      .mini-label {
+        color: var(--text-soft);
+        font-size: 0.74rem;
+        margin-bottom: 6px;
+      }
+
+      .mini-value {
+        font-weight: 800;
+        font-size: 1.5rem;
+        letter-spacing: -0.04em;
+      }
+
+      .mini-trend {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        color: var(--success);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .trust {
+        background: rgba(255, 255, 255, 0.02);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .trust-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 22px 0;
+        color: var(--text-soft);
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        flex-wrap: wrap;
+      }
+
+      .trust-logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(100%, 820px);
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        opacity: 0.8;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: rgba(234, 241, 255, 0.8);
+      }
+
+      .features-header,
+      .courses-header,
+      .pricing-header,
+      .faq-header {
+        margin-bottom: 48px;
+        max-width: 720px;
+      }
+
+      .section-tag {
+        color: var(--primary-2);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.3rem);
+        line-height: 1.08;
+        letter-spacing: -0.06em;
+        margin-bottom: 18px;
+      }
+
+      .section-copy {
+        color: var(--text-soft);
+        font-size: 1.02rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .feature-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 24px 18px 22px;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(91, 124, 255, 0.25);
+      }
+
+      .icon-box {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(91, 124, 255, 0.2), rgba(123, 156, 255, 0.16));
+        display: grid;
+        place-items: center;
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+      }
+
+      .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .feature-card p {
+        color: var(--text-soft);
+        font-size: 0.96rem;
+      }
+
+      .courses {
+        background: rgba(10, 18, 31, 0.35);
+      }
+
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .course-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: 0.25s ease;
+      }
+
+      .course-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(91, 124, 255, 0.28);
+      }
+
+      .course-image {
+        height: 220px;
+        overflow: hidden;
+      }
+
+      .course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .course-content {
+        padding: 22px 20px 24px;
+      }
+
+      .course-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.76rem;
+        color: var(--text-soft);
+        margin-bottom: 14px;
+      }
+
+      .pill {
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(123, 156, 255, 0.08);
+        border: 1px solid rgba(123, 156, 255, 0.18);
+        color: #dfe8ff;
+      }
+
+      .course-content h3 {
+        font-size: 1.55rem;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+      }
+
+      .course-content p {
+        color: var(--text-soft);
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+      }
+
+      .course-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .price {
+        font-weight: 800;
+        font-size: 1.3rem;
+      }
+
+      .course-link {
+        color: #dfe8ff;
+        font-weight: 700;
+      }
+
+      .results {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .results-panel {
+        background: linear-gradient(180deg, rgba(18, 35, 61, 0.9), rgba(10, 17, 29, 0.98));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .results-panel img {
+        width: 100%;
+        height: 100%;
+        min-height: 430px;
+        object-fit: cover;
+      }
+
+      .results-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .mini-result {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 22px 20px;
+      }
+
+      .mini-result .big {
+        font-size: 2.2rem;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        margin-bottom: 4px;
+      }
+
+      .mini-result .label {
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .testimonial {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 22px;
+        padding: 24px;
+      }
+
+      .stars {
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+      }
+
+      .testimonial p {
+        color: var(--text-soft);
+        margin-bottom: 18px;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .person strong {
+        display: block;
+        font-size: 0.96rem;
+      }
+
+      .person span {
+        color: var(--text-soft);
+        font-size: 0.82rem;
+      }
+
+      .pricing {
+        background: rgba(10, 18, 31, 0.38);
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .pricing-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 28px 22px;
+        position: relative;
+      }
+
+      .pricing-card.featured {
+        background: linear-gradient(180deg, rgba(91,124,255,0.16), rgba(255,255,255,0.04));
+        border-color: rgba(91, 124, 255, 0.36);
+        transform: scale(1.02);
+      }
+
+      .pricing-badge {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 183, 3, 0.14);
+        border: 1px solid rgba(255, 183, 3, 0.2);
+        color: #ffd46c;
+      }
+
+      .plan-name {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .price-wrap {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .currency {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .amount {
+        font-size: 2.7rem;
+        font-weight: 900;
+        letter-spacing: -0.06em;
+      }
+
+      .period {
+        color: var(--text-soft);
+      }
+
+      .pricing-card ul {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .pricing-card li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-soft);
+      }
+
+      .check {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(45, 212, 191, 0.12);
+        color: var(--success);
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .faq-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 22px 20px;
+      }
+
+      .faq-item h3 {
+        font-size: 1.08rem;
+        margin-bottom: 8px;
+      }
+
+      .faq-item p {
+        color: var(--text-soft);
+      }
+
+      .cta {
+        padding: 90px 0 110px;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, rgba(91,124,255,0.2), rgba(255,183,3,0.12));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box h2 {
+        margin-bottom: 8px;
+      }
+
+      .cta-box p {
+        color: var(--text-soft);
+      }
+
+      .signup-form {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(11, 18, 29, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        padding: 10px 12px 10px 18px;
+        min-width: min(100%, 470px);
+      }
+
+      .signup-form input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text);
+        font: inherit;
+        width: 100%;
+      }
+
+      .signup-form input::placeholder {
+        color: var(--muted);
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(6, 12, 22, 0.8);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 0;
+        color: var(--text-soft);
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .results,
+        .cta-box {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .features-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .courses-grid,
+        .testimonial-grid,
+        .pricing-grid,
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 78px;
+          left: 16px;
+          right: 16px;
+          background: rgba(8, 17, 32, 0.98);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 18px;
+          padding: 16px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          box-shadow: var(--shadow);
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .section {
+          padding: 80px 0;
+        }
+
+        .nav-actions .btn-secondary {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 42px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-actions .btn {
+          width: 100%;
+        }
+
+        .features-grid,
+        .results-list {
+          grid-template-columns: 1fr;
+        }
+
+        .signup-form {
+          flex-direction: column;
+          align-items: stretch;
+          border-radius: 20px;
+          padding: 14px;
+          min-width: auto;
+        }
+
+        .signup-form .btn {
+          width: 100%;
+        }
+
+        .cta-box {
+          padding: 28px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#" class="brand" aria-label="GrowthLab Academy home">
+          <span class="brand-mark">G</span>
+          <span>GrowthLab</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#programs">Programs</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#results">Results</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Master growth marketing</div>
+            <h1>Turn traffic into revenue with modern digital strategies.</h1>
+            <p>
+              Learn the exact frameworks top marketers use to grow brands, build demand,
+              and scale customer acquisition through SEO, paid media, content, CRM, and analytics.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#pricing" class="btn btn-primary">Enroll now</a>
+              <a href="#programs" class="btn btn-secondary">View curriculum</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>12k+</strong>
+                <span>students trained</span>
+              </div>
+              <div class="stat">
+                <strong>4.9/5</strong>
+                <span>average rating</span>
+              </div>
+              <div class="stat">
+                <strong>96%</strong>
+                <span>job-ready outcomes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="visual-card">
+              <div class="hero-main-image">
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+                  alt="Marketing course student learning online"
+                />
+              </div>
+            </div>
+
+            <div class="floating-card small">
+              <div class="mini-label">Qualified leads</div>
+              <div class="mini-value">+184%</div>
+              <div class="mini-trend">↗ 6 months growth</div>
+            </div>
+
+            <div class="floating-card large">
+              <div class="mini-label">Campaign ROAS</div>
+              <div class="mini-value">4.8x</div>
+              <div class="mini-trend">↗ with AI optimization</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust">
+        <div class="container trust-inner">
+          <span>Trusted by teams at</span>
+          <div class="trust-logos">
+            <span class="logo">SHOPIFY</span>
+            <span class="logo">CANVA</span>
+            <span class="logo">STRIPE</span>
+            <span class="logo">ZAPIER</span>
+            <span class="logo">NOTION</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" id="programs">
+        <div class="container">
+          <div class="features-header">
+            <div class="section-tag">Why students choose us</div>
+            <h2>Everything you need to grow smarter and faster.</h2>
+            <p class="section-copy">
+              Built for founders, marketers, and career-switchers who want strategy, execution, and measurable outcomes.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="icon-box">📈</div>
+              <h3>SEO & content</h3>
+              <p>Build search visibility, organic traffic, and content systems that compound over time.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon-box">🎯</div>
+              <h3>Paid acquisition</h3>
+              <p>Launch high-converting campaigns across Google, Meta, LinkedIn, and YouTube.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon-box">💬</div>
+              <h3>Social media</h3>
+              <p>Create brand content, community strategy, and funnel-building engagement systems.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon-box">📊</div>
+              <h3>Analytics</h3>
+              <p>Track CAC, CLV, conversion paths, and performance with dashboards that inform action.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section courses" id="curriculum">
+        <div class="container">
+          <div class="courses-header">
+            <div class="section-tag">Course paths</div>
+            <h2>Choose the learning track that fits your goals.</h2>
+            <p class="section-copy">
+              From brand growth to paid media to full-funnel performance, each path is designed for action.
+            </p>
+          </div>
+
+          <div class="courses-grid">
+            <article class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+                  alt="Marketing strategy course"
+                />
+              </div>
+              <div class="course-content">
+                <div class="course-meta">
+                  <span class="pill">Beginner</span>
+                  <span>6 weeks</span>
+                </div>
+                <h3>Digital Marketing Foundations</h3>
+                <p>Learn core growth channels, positioning, funnels, buyer psychology, and audience targeting.</p>
+                <div class="course-footer">
+                  <div class="price">$149</div>
+                  <a href="#" class="course-link">Explore course →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                  alt="SEO and analytics course"
+                />
+              </div>
+              <div class="course-content">
+                <div class="course-meta">
+                  <span class="pill">Intermediate</span>
+                  <span>8 weeks</span>
+                </div>
+                <h3>SEO + Analytics Mastery</h3>
+                <p>Master search visibility, attribution, GA4 dashboards, conversion optimization, and reporting.</p>
+                <div class="course-footer">
+                  <div class="price">$249</div>
+                  <a href="#" class="course-link">Explore course →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <div class="course-image">
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+                  alt="Paid advertising course"
+                />
+              </div>
+              <div class="course-content">
+                <div class="course-meta">
+                  <span class="pill">Advanced</span>
+                  <span>10 weeks</span>
+                </div>
+                <h3>Paid Ads & Funnel Strategy</h3>
+                <p>Scale campaigns with creative testing, landing pages, retention loops, and performance analysis.</p>
+                <div class="course-footer">
+                  <div class="price">$329</div>
+                  <a href="#" class="course-link">Explore course →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="results">
+        <div class="container results">
+          <div class="results-copy">
+            <div class="section-tag">Proven outcomes</div>
+            <h2>Learn with a curriculum built for real-world growth.</h2>
+            <p class="section-copy">
+              We combine marketing theory with tactical execution so you can launch campaigns, improve conversion rates,
+              and drive measurable business results.
+            </p>
+
+            <div class="results-list" style="margin-top: 26px;">
+              <div class="mini-result">
+                <div class="big">3x</div>
+                <div class="label">More qualified leads</div>
+              </div>
+              <div class="mini-result">
+                <div class="big">28%</div>
+                <div class="label">Lower acquisition cost</div>
+              </div>
+              <div class="mini-result">
+                <div class="big">52%</div>
+                <div class="label">Higher engagement</div>
+              </div>
+              <div class="mini-result">
+                <div class="big">1:1</div>
+                <div class="label">Mentor feedback</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-panel">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+              alt="Marketing analysis dashboard"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="courses-header">
+            <div class="section-tag">Student stories</div>
+            <h2>Real experts, real wins, real growth.</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <p>
+                “This course gave me the structure to turn my freelance marketing skill into a real service business.
+                I landed 3 clients within 8 weeks.”
+              </p>
+              <div class="person">
+                <img
+                  class="avatar"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                  alt="Nina Alvarez"
+                />
+                <div>
+                  <strong>Nina Alvarez</strong>
+                  <span>Brand Strategist</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <p>
+                “The SEO and funnel modules changed how I approach lead generation. Our pipeline is stronger and our conversion rate is up.”
+              </p>
+              <div class="person">
+                <img
+                  class="avatar"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+                  alt="Marcus Lee"
+                />
+                <div>
+                  <strong>Marcus Lee</strong>
+                  <span>Growth Manager</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Everything was practical, not theory-heavy. I built campaigns live, learned reporting, and got actionable feedback from mentors.”
+              </p>
+              <div class="person">
+                <img
+                  class="avatar"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
+                  alt="Sofia Nguyen"
+                />
+                <div>
+                  <strong>Sofia Nguyen</strong>
+                  <span>Performance Marketer</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pricing" id="pricing">
+        <div class="container">
+          <div class="pricing-header">
+            <div class="section-tag">Simple pricing</div>
+            <h2>Choose the plan that matches your growth stage.</h2>
+            <p class="section-copy">
+              Flexible enrollment with lifetime access to tutorials, templates, and group feedback.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <div class="plan-name">Starter</div>
+              <div class="price-wrap">
+                <span class="currency">$</span>
+                <span class="amount">99</span>
+                <span class="period">/mo</span>
+              </div>
+              <ul>
+                <li><span class="check">✓</span>Access to 3 core courses</li>
+                <li><span class="check">✓</span>Live office hours</li>
+                <li><span class="check">✓</span>Marketing templates</li>
+              </ul>
+              <a href="#" class="btn btn-secondary">Get started</a>
+            </article>
+
+            <article class="pricing-card featured">
+              <div class="pricing-badge">Most Popular</div>
+              <div class="plan-name">Pro Growth</div>
+              <div class="price-wrap">
+                <span class="currency">$</span>
+                <span class="amount">199</span>
+                <span class="period">/mo</span>
+              </div>
+              <ul>
+                <li><span class="check">✓</span>Full curriculum access</li>
+                <li><span class="check">✓</span>1:1 mentor review</li>
+                <li><span class="check">✓</span>Campaign feedback + strategy calls</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Join Pro</a>
+            </article>
+
+            <article class="pricing-card">
+              <div class="plan-name">Agency Track</div>
+              <div class="price-wrap">
+                <span class="currency">$</span>
+                <span class="amount">349</span>
+                <span class="period">/mo</span>
+              </div>
+              <ul>
+                <li><span class="check">✓</span>Advanced scaling modules</li>
+                <li><span class="check">✓</span>Client acquisition frameworks</li>
+                <li><span class="check">✓</span>Priority support</li>
+              </ul>
+              <a href="#" class="btn btn-secondary">Book a call</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="faq-header">
+            <div class="section-tag">FAQ</div>
+            <h2>Answers to common questions.</h2>
+          </div>
+
+          <div class="faq-grid">
+            <article class="faq-item">
+              <h3>Do I need marketing experience?</h3>
+              <p>No. Our beginner-friendly lessons start with fundamentals and build toward strategy execution.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Is this course self-paced?</h3>
+              <p>Yes. You can complete lessons on your schedule, with optional live sessions and feedback checkpoints.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Will I get support during the course?</h3>
+              <p>Yes. Students receive access to community support, mentor feedback, and live Q&A sessions.</p>
+            </article>
+
+            <article class="faq-item">
+              <h3>Can I apply this to my business?</h3>
+              <p>Absolutely. The curriculum is designed for founders, freelancers, in-house marketers, and agencies.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <div class="section-tag" style="margin-bottom: 8px;">Launch your growth</div>
+              <h2>Build your next revenue engine.</h2>
+              <p>Start with the fundamentals, master execution, and build systems that scale.</p>
+            </div>
+
+            <form class="signup-form" onsubmit="event.preventDefault(); alert('Thanks! You are on the waitlist.');">
+              <input type="email" aria-label="Email address" placeholder="Enter your email" required />
+              <button class="btn btn-primary" type="submit">Get started</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div class="brand">
+          <span class="brand-mark">G</span>
+          <span>GrowthLab</span>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+          <span>© 2026 GrowthLab Academy</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => navLinks.classList.remove("open"));
+      });
+    </script>
+  </body>
+</html>
